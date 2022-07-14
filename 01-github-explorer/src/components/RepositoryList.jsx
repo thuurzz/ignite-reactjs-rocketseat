@@ -1,27 +1,18 @@
 import React from "react";
+import RepositoryItem from "./RepositoryItem";
+
+const repository = {
+  name: "Ignite",
+  description: "Repo RactJS",
+  link: "https://github.com/thuurzz/ignite-reactjs-rocketseat",
+};
 
 const RepositoryList = () => {
-  const repository = "Ignite";
-
   return (
     <section className="repository-list">
       <h1>Lista de repositórios</h1>
       <ul>
-        <li>
-          <strong>{repository}</strong>
-          <p>Fomrs in React</p>
-          <a href="#">Acessar repositório</a>
-        </li>
-        <li>
-          <strong>unform</strong>
-          <p>Fomrs in React</p>
-          <a href="#">Acessar repositório</a>
-        </li>
-        <li>
-          <strong>unform</strong>
-          <p>Fomrs in React</p>
-          <a href="#">Acessar repositório</a>
-        </li>
+        <RepositoryItem repository={repository} />
       </ul>
     </section>
   );
