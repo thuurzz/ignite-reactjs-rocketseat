@@ -2,8 +2,14 @@ import React, { useEffect, useState } from "react";
 import RepositoryItem from "./RepositoryItem";
 import "../styles/repositories.scss";
 
+interface Repository {
+  name: string;
+  description: string;
+  html_url: string;
+}
+
 const RepositoryList = () => {
-  const [repositories, setRepositories] = useState([]);
+  const [repositories, setRepositories] = useState<Repository[]>([]);
 
   useEffect(() => {
     handleRepositories();
@@ -18,10 +24,10 @@ const RepositoryList = () => {
   return (
     <section className="repository-list">
       <h1>Lista de repositórios</h1>
-      {repositories.map((repository, index) => {
+      {repositories.map((repository) => {
         return (
-          <ul key={index}>
-            <RepositoryItem repository={repository} />
+          <ul>
+            <RepositoryItem repository={repository} key={repository.name} />
           </ul>
         );
       })}
