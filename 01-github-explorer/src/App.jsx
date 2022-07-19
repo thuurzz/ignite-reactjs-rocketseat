@@ -6,9 +6,6 @@ export function App() {
   return (
     <div>
       <RepositoryList />
-      <RepositoryList />
-      <RepositoryList />
-      <RepositoryList />
     </div>
   );
 }
